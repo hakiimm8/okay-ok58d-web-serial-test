@@ -1,0 +1,37 @@
+:root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172b2e; background: #f3f6f4; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { width: min(100% - 32px, 660px); margin: 0 auto; padding: 32px 0 56px; }
+.hero { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.mark { display: grid; place-items: center; flex: none; width: 56px; height: 56px; border-radius: 16px; background: #142d31; color: white; font-size: 22px; font-weight: 800; letter-spacing: -.04em; }
+h1 { margin: 0 0 3px; font-size: clamp(24px, 6vw, 32px); line-height: 1.15; letter-spacing: -.035em; }
+.hero p { margin: 0; color: #526568; font-size: 14px; }
+.panel { margin: 0 0 14px; padding: 22px; background: #fff; border: 1px solid #dce5e2; border-radius: 18px; box-shadow: 0 6px 24px rgba(20, 45, 49, .035); }
+h2 { margin: 0 0 17px; font-size: 17px; line-height: 1.3; }
+.check { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid #edf1ef; font-size: 14px; }
+.check strong { text-align: right; }
+.good { color: #1d7454; }
+.bad { color: #ab4439; }
+.support-message { margin: 10px 0; font-weight: 650; line-height: 1.45; }
+.help, .footer-note { color: #526568; font-size: 13px; line-height: 1.55; }
+.help { margin: 13px 0 0; }
+label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 650; }
+select, button { font: inherit; }
+select { display: block; width: 100%; min-height: 46px; padding: 9px 13px; color: #172b2e; background: #fff; border: 1px solid #bbc9c6; border-radius: 10px; }
+.actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 16px; }
+button { min-height: 46px; padding: 10px 12px; border: 1px solid #b8c9c4; border-radius: 10px; background: #fff; color: #173e3d; font-size: 14px; font-weight: 700; cursor: pointer; }
+button:hover:not(:disabled) { background: #eaf2ee; }
+button:focus-visible, select:focus-visible { outline: 3px solid #68b69c; outline-offset: 2px; }
+button:disabled { cursor: not-allowed; opacity: .46; }
+button.primary { background: #156b58; border-color: #156b58; color: #fff; }
+button.primary:hover:not(:disabled) { background: #0d5949; }
+.status-row { display: flex; align-items: center; gap: 9px; margin-top: 18px; font-size: 14px; font-weight: 650; }
+.status-dot { width: 9px; height: 9px; border-radius: 50%; background: #99a8a3; }
+.status-dot.connected { background: #25a36d; }
+.status-dot.error { background: #d45d4c; }
+.log-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; }
+.log-heading h2 { margin: 0; }
+.log-heading button { min-height: 34px; padding: 6px 11px; font-size: 12px; }
+pre { min-height: 130px; max-height: 260px; overflow: auto; margin: 0; padding: 14px; border-radius: 10px; background: #10292d; color: #ddede6; font: 12px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.footer-note { margin: 19px 4px 0; }
+@media (max-width: 520px) { .shell { width: min(100% - 24px, 660px); padding-top: 20px; } .panel { padding: 18px; } .actions { grid-template-columns: 1fr; } .actions button { width: 100%; } }

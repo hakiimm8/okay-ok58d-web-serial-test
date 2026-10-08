@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d31">
+  <title>OK-58D Bluetooth Printer Test</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="mark" aria-hidden="true">58</div>
+      <div>
+        <h1>Bluetooth printer test</h1>
+        <p>OKAY OK-58D · 58 mm receipt printer</p>
+      </div>
+    </header>
+
+    <section class="panel" aria-labelledby="readiness-title">
+      <h2 id="readiness-title">Before you connect</h2>
+      <div class="check"><span>Secure HTTPS page</span><strong id="https-check">Checking…</strong></div>
+      <div class="check"><span>Web Serial API</span><strong id="api-check">Checking…</strong></div>
+      <p id="support-message" class="support-message" role="status"></p>
+      <p class="help">Pair the printer in Android Bluetooth settings first. Then open this site in Chrome for Android 138 or newer.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="printer-title">
+      <h2 id="printer-title">Printer</h2>
+      <label for="baud-rate">Baud rate</label>
+      <select id="baud-rate">
+        <option value="9600" selected>9600 (default)</option>
+        <option value="19200">19200</option>
+        <option value="38400">38400</option>
+        <option value="57600">57600</option>
+        <option value="115200">115200</option>
+      </select>
+      <div class="actions">
+        <button id="connect" class="primary" type="button">Connect printer</button>
+        <button id="print" type="button" disabled>Print test</button>
+        <button id="disconnect" type="button" disabled>Disconnect</button>
+      </div>
+      <div class="status-row"><span class="status-dot" id="status-dot"></span><span id="connection-status" role="status">Not connected</span></div>
+      <p class="help">The picker shows paired Bluetooth Classic devices advertising the standard SPP service. A successful connection alone does not confirm ESC/POS compatibility.</p>
+    </section>
+
+    <section class="panel log-panel" aria-labelledby="log-title">
+      <div class="log-heading"><h2 id="log-title">Diagnostic log</h2><button id="clear-log" type="button">Clear</button></div>
+      <pre id="log" aria-live="polite"></pre>
+    </section>
+
+    <p class="footer-note">This page uses Web Serial over Bluetooth Classic SPP/RFCOMM, not BLE. It does not establish support inside an Android WebView or APK, or in iPhone Safari. Only a physical print confirms this printer works.</p>
+  </main>
+</body>
+</html>
